@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Test", "JobBoard.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Model", "JobBoard.Model\JobBoard.Model.csproj", "{0BC7DB2B-2FC0-4AEF-BC5D-49D6957B76EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoard.Data", "JobBoard.Data\JobBoard.Data.csproj", "{B2CCDEB2-37C3-476C-A49E-C7BD249AF519}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0BC7DB2B-2FC0-4AEF-BC5D-49D6957B76EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BC7DB2B-2FC0-4AEF-BC5D-49D6957B76EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BC7DB2B-2FC0-4AEF-BC5D-49D6957B76EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2CCDEB2-37C3-476C-A49E-C7BD249AF519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CCDEB2-37C3-476C-A49E-C7BD249AF519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CCDEB2-37C3-476C-A49E-C7BD249AF519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CCDEB2-37C3-476C-A49E-C7BD249AF519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
