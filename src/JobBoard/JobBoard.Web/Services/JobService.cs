@@ -12,6 +12,7 @@ namespace JobBoard.Web.Services
     public class JobService : IJobsService
     {
         static HttpClient client = new HttpClient();
+        private readonly string _apiUrl = "https://localhost:44341/api/Jobs/";
         public async Task<Job> CreateJob(Job job)
         {
             Job receivedJob;
@@ -19,7 +20,7 @@ namespace JobBoard.Web.Services
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(job), Encoding.UTF8, "application/json");
  
-                using (var response = await httpClient.PostAsync("https://localhost:44366/api/Jobs/", content))
+                using (var response = await httpClient.PostAsync(_apiUrl, content))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     receivedJob = JsonConvert.DeserializeObject<Job>(apiResponse);
@@ -34,7 +35,7 @@ namespace JobBoard.Web.Services
             Job receivedJob;
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.DeleteAsync("https://localhost:44366/api/Jobs/" + id))
+                using (var response = await httpClient.DeleteAsync(_apiUrl + id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     receivedJob = JsonConvert.DeserializeObject<Job>(apiResponse);
@@ -51,7 +52,7 @@ namespace JobBoard.Web.Services
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(job), Encoding.UTF8, "application/json");
 
-                using (var response =  httpClient.PutAsync("https://localhost:44366/api/Jobs/" + job.Id, content).Result)
+                using (var response =  httpClient.PutAsync(_apiUrl + job.Id, content).Result)
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     receivedJob = JsonConvert.DeserializeObject<Job>(apiResponse);
@@ -65,7 +66,7 @@ namespace JobBoard.Web.Services
             List<Job> jobs;
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:44366/api/Jobs"))
+                using (var response = await httpClient.GetAsync(_apiUrl))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     jobs = JsonConvert.DeserializeObject<List<Job>>(apiResponse);
@@ -79,7 +80,7 @@ namespace JobBoard.Web.Services
             Job job;
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:44366/api/Jobs/" + id))
+                using (var response = await httpClient.GetAsync(_apiUrl + id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     job = JsonConvert.DeserializeObject<Job>(apiResponse);
