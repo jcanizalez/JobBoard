@@ -1,7 +1,6 @@
 ﻿using JobBoard.Model;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -11,8 +10,13 @@ namespace JobBoard.Web.Services
 {
     public class JobService : IJobsService
     {
-        static HttpClient client = new HttpClient();
-        private readonly string _apiUrl = "https://localhost:44341/api/Jobs/";
+         
+        readonly string _apiUrl;
+
+        public JobService(IConfiguration configuration)
+        {
+            _apiUrl = configuration["ApiUrl"] + "api/Jobs/";
+        }
         public async Task<Job> CreateJob(Job job)
         {
             Job receivedJob;

@@ -17,7 +17,7 @@ A fully-featured MVC Core job board application
 - Delete
 
 ## ⚙️ Online Example
-
+https://jobboardweb20200923084251.azurewebsites.net/
 
 ## 📦 Installation Guide
 
@@ -27,14 +27,15 @@ A fully-featured MVC Core job board application
   $ cd job-board/src/JobBoard/JobBoard.API
   $ dotnet run 
   ```
- 2. Navigate to https://localhost:44341/swagger/  to check the API is running
+ 2. Navigate to the url specified in the previous step  to check the API, for example https://localhost:44341/swagger/
   
+ 3. Open appsettings.Development.json and update ApiUrl with the previous url, for example https://localhost:44341/
   
- 3. Open another terminal in the path where you clone the code in the previous step and execute 
+ 4. Open another terminal in the path where you clone the code in the previous step and execute 
  ```
   $ cd job-board/src/JobBoard/JobBoard.Web
   $ dotnet run 
   ```
   
-  4. Navigate to https://localhost:44318/ to check that web application is running.
+ 5. Navigate to https://localhost:44318/ to check that web application is running.
   

@@ -117,7 +117,7 @@ namespace JobBoard.Web.Controllers
                 return NotFound();
             }
 
-            var job = await _service.DeleteJob(id.Value);
+            var job = await _service.GetJobById(id.Value);
             if (job == null)
             {
                 return NotFound();
