@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using JobBoard.Data;
+using JobBoard.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +31,11 @@ namespace JobBoard.API
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddScoped<IJobRepository, JobRepository>();
+            services.AddEntityFrameworkSqlite().AddDbContext<JobBoardContext>(options => options.UseSqlite("Filename=JobDatabase.db", options =>
+            {
+                options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
