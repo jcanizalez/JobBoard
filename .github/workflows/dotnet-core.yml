@@ -17,7 +17,7 @@ jobs:
       - name: Building web app
         uses: azure/appservice-build@v2
         with:
-          source-directory: '/src/JobBoard/JobBoard.Web/'
+          source-directory: src/JobBoard/JobBoard.Web
 
       - name: Deploying web app to Azure
         uses: azure/webapps-deploy@v1
