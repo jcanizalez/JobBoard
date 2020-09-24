@@ -10,7 +10,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: JobBoardWeb20200923084251
   AZURE_WEBAPP_PACKAGE_PATH: '/src/JobBoard/JobBoard.Web/'      
-  DOTNET_VERSION: '3.1.8'        
+  DOTNET_VERSION: '3.1.402'        
 
 jobs:
   build-and-deploy:
