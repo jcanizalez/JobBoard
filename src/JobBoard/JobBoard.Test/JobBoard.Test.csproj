@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JobBoard.API\JobBoard.API.csproj" />
     <ProjectReference Include="..\JobBoard.Data\JobBoard.Data.csproj" />
     <ProjectReference Include="..\JobBoard.Model\JobBoard.Model.csproj" />
   </ItemGroup>
