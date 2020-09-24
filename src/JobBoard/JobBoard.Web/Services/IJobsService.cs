@@ -12,6 +12,6 @@ namespace JobBoard.Web.Services
         Task<Job> CreateJob(Job job);
         Task<Job> EditJob(Job job);
         Task<Job> DeleteJob(int id);
-
+       
     }
 }
